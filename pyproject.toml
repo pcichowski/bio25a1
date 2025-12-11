@@ -1,0 +1,11 @@
+[project]
+name = "rosalind"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "blosum>=2.2.0",
+    "matplotlib>=3.10.7",
+    "requests>=2.32.5",
+]
