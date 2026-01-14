@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raport — Filogeneza z odległości i drzew Newick</title>
+    <title>Raport - Filogeneza z odległości i drzew Newick</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -17,8 +17,23 @@
             white-space: pre;
         }
         @media print {
-            .no-print { display: none !important; }
-            a[href]:after { content: "" !important; }
+            @page {
+                margin: 0;
+            }
+            body {
+                margin: 1.5cm;
+            }
+            .no-print, button {
+                display: none !important;
+            }
+            h2, h3 {
+                break-after: avoid;
+            }
+
+            /* Zapobiega rozcinaniu ważnych bloków (np. definicji w słowniczku) */
+            .sekcja, .haslo-slownika, .kod-container {
+                break-inside: avoid;
+            }
         }
     </style>
 </head>
@@ -394,12 +409,6 @@ l2  = float(np.linalg.norm(T - D))
             </div>
         </div>
     </section>
-
-    <footer class="pb-10">
-        <div class="text-center text-xs text-slate-500">
-            Raport HTML • TailwindCSS • dokładnie 3 sekcje • plik do wydruku jako PDF
-        </div>
-    </footer>
 
 </main>
 </body>
