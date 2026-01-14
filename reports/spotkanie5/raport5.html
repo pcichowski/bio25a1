@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raport — Filogeneza z odległości i drzew Newick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --brand: 34 197 94;
+            --brand2: 59 130 246;
+        }
+        .accent-bar {
+            background: linear-gradient(90deg, rgb(var(--brand)) 0%, rgb(var(--brand2)) 70%, rgba(59,130,246,0) 100%);
+        }
+        pre code {
+            white-space: pre;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            a[href]:after { content: "" !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 text-slate-900 antialiased">
+<div class="no-print sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="h-9 w-9 rounded-xl bg-emerald-600 text-white grid place-items-center font-bold">EB</div>
+            <div class="leading-tight">
+                <div class="font-semibold">Raport ze spotkania 5 - Filogeneza z odległości i drzew Newick</div>
+                <div class="text-xs text-slate-600">15.01.2026</div>
+            </div>
+        </div>
+        <button onclick="window.print()"
+                class="px-3 py-2 rounded-xl bg-slate-900 text-white text-sm hover:bg-slate-800 transition">
+            Drukuj / PDF
+        </button>
+    </div>
+</div>
+
+<header class="max-w-6xl mx-auto px-4 pt-8">
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+        <div class="h-1.5 accent-bar"></div>
+        <div class="p-8 md:p-10">
+            <div class="flex flex-col md:flex-col md:items-start md:justify-between">
+                <h4 class="font-semibold text-sm text-slate-700">Spotkanie 5</h4>
+                <h1 class="text-3xl font-bold tracking-tight mb-6">Filogeneza z odległości i drzewa w formacie Newick</h1>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 min-w-[280px]">
+                    <div class="text-sm text-slate-600 mb-2">Autorzy</div>
+                    <div class="mb-1">Mateusz Strzelecki 188692</div>
+                    <div class="">Paweł Cichowski 184465</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- SEKCJA 1 -->
+    <section class="bg-white rounded-3xl shadow-lg overflow-hidden" id="sekcja-1">
+        <div class="h-1.5 accent-bar"></div>
+        <div class="p-8">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="mt-2 text-slate-600">Sekcja 1</p>
+                    <h2 class="text-2xl font-bold tracking-tight">Jak rekonstruujemy historię ewolucyjną?</h2>
+                </div>
+                <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                    Teoria
+                </span>
+            </div>
+
+            <article class="mt-6 text-slate-800 leading-relaxed flex flex-col gap-y-3">
+
+                <p>
+                    Drzewo filogenetyczne to drzewo ważone, które pokazuje, jak pewne gatunki lub geny rozgałęziały się w czasie.
+                    Budujemy je przez stworzenie macierzy odległości, gdzie każda komórka ma wartość oznaczającą jak każda para stworzeń różni się od pozostałych. <br>
+                </p>
+                <p>
+                    W idealnym przypadku dane spełniałyby zasadę addytywności metryki - odległości macierzy odpowiadałyby sumie wag krawędzi drzewa.
+                    Realne dane biologiczne są często nieuporządkowane i rzadko sumują się idealnie, przez co należy użyć heurystyk takich jak metoda najmniejszych kwadratów.
+                </p>
+                <p>
+                    Wynik zazwyczaj zapisuje się w formacie Newick, w którym nawiasy i przecinki opisują strukturę drzewa i długości gałęzi.
+                </p>
+                <p>
+                    Drzewa porównuje się, aby sprawdzić czy wyniki działania są stabilne i czy różne algorytmy i heurystyki dają zbliżony wynik.
+                </p>
+
+            </article>
+
+            <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div class="text-sm font-semibold">Użycie AI w tej sekcji</div>
+                <p class="mt-2 text-xs text-slate-700">
+                    AI pomogło uporządkować wątki (drzewo, addytywność, Newick, porównywanie drzew)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA 2 -->
+    <section class="bg-white rounded-3xl shadow-lg overflow-hidden" id="sekcja-2">
+        <div class="h-1.5 accent-bar"></div>
+        <div class="p-8">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="mt-2 text-slate-600">Sekcja 2</p>
+                    <h2 class="text-2xl font-bold tracking-tight">Minisłowniczek</h2>
+                </div>
+                <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+            Pojęcia
+          </span>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">Drzewo filogenetyczne</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Graf opisujący hipotezę pokrewieństwa: liście to obserwowane taksony, a węzły wewnętrzne to hipotetyczni przodkowie. W filogenezie jest to główny obiekt, z którego odczytujemy grupy siostrzane i kolejność rozdzielenia linii.</div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">Macierz odległości</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Kwadratowa macierz, w której element (i,j) to odległość między taksonami i oraz j, policzona z danych (np. z sekwencji). Jest wejściem dla metod dystansowych i pozwala traktować filogenezę jak problem rekonstrukcji z metryk.</div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">Metryka addytywna</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Własność odległości mówiąca, że istnieje drzewo z długościami gałęzi, które dokładnie odtwarza wszystkie dystanse między liśćmi jako sumy po ścieżkach. Jeśli macierz jest addytywna, rekonstrukcja drzewa z odległości ma jednoznaczniejsze i stabilniejsze rozwiązania.</div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">Heurystyka dystansowa</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Algorytm, który buduje drzewo przybliżone na podstawie macierzy odległości, bo pełne przeszukanie przestrzeni drzew jest obliczeniowo nieopłacalne. W praktyce heurystyki (NJ, UPGMA) są standardem, a ich jakość ocenia się błędem dopasowania do macierzy.</div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">UPGMA</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Metoda klasteryzacji hierarchicznej, która łączy najbliższe klastry i tworzy drzewo ultrametryczne (zakłada stałe tempo ewolucji, tzw. zegar molekularny). Daje proste w implementacji drzewa, ale może zniekształcać relacje, gdy tempa ewolucji różnią się między liniami.</div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">Neighbor Joining (NJ)</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Heurystyka budująca drzewo, która iteracyjnie wybiera parę taksonów minimalizującą kryterium oparte o skorygowane odległości. Często lepiej radzi sobie niż UPGMA, bo nie wymaga założenia ultrametryczności i zwykle daje dobre przybliżenie drzewa addytywnego.</div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-sm font-semibold text-slate-900">Format Newick</div>
+                    <div class="mt-2 text-sm text-slate-700 leading-relaxed">Tekstowy zapis drzewa za pomocą zagnieżdżonych nawiasów: rozgałęzienia koduje struktura, a długości gałęzi dopisuje się po dwukropku. Pozwala łatwo przenosić drzewa między narzędziami i porównywać wyniki różnych rekonstrukcji.</div>
+                </div>
+
+            </div>
+
+            <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div class="font-semibold text-sm">Użycie AI w tej sekcji</div>
+                <p class="mt-2 text-sm text-slate-700 text-xs">
+                    AI wykorzystano do wygenerowania pierwszych wersji definicji, następnie hasła zostały przeczytane ze zrozumieniem i nieco przeredagowane
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA 3 -->
+    <section class="bg-white rounded-3xl shadow-lg overflow-hidden" id="sekcja-3">
+        <div class="h-1.5 accent-bar"></div>
+        <div class="p-8">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="mt-2 text-slate-600">
+                        Sekcja 3
+                    </p>
+                    <h2 class="text-2xl font-bold tracking-tight">Eksperymentacja w Pythonie - Budowa i analiza drzewa filogenetycznego</h2>
+
+                </div>
+                <span class="px-3 py-1.5 shrink-0 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+                    Python
+                </span>
+            </div>
+
+            <!-- Opis danych -->
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div class="lg:col-span-2 rounded-2xl border border-slate-200 p-5">
+                    <div class="font-semibold">Opis danych</div>
+                    <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+                        Użyłem 10 krótkich sekwencji DNA (56 bp) zapisanych w formacie FASTA. Zamiast pobierania z zewnętrznej bazy,
+                        wklejam je w kod jako tekst, aby eksperyment był w pełni odtwarzalny w jednym pliku. Odległości policzyłem jako
+                        p-distance (odsetek niedopasowanych pozycji), czyli prostą metrykę „na surowych znakach” bez modelu substytucji.
+                    </p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="font-semibold">Dlaczego wybór NJ?</div>
+                    <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+                        Wybrałem Neighbor Joining, bo nie zakłada ultrametryczności (stałego tempa ewolucji) jak UPGMA.
+                        W metodach dystansowych NJ często lepiej przybliża drzewo addytywne, gdy tempa zmian między liniami są nierówne.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kod -->
+            <div class="mt-6 rounded-2xl border border-slate-200 overflow-hidden">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                    <div class="font-semibold">Kod źródłowy</div>
+                    <div class="text-xs text-slate-500">Dependencje: Python, Biopython, NumPy, Matplotlib</div>
+                </div>
+                <div class="p-5">
+            <pre class="bg-slate-900 text-slate-100 rounded-2xl p-4 overflow-x-auto text-xs leading-relaxed"><code>from io import StringIO
+from Bio import SeqIO
+
+records = list(SeqIO.parse(StringIO(fasta_text), "fasta"))
+names = [r.id for r in records]
+seqs  = [str(r.seq) for r in records]
+
+# distance matrix
+import numpy as np
+n, L = len(seqs), len(seqs[0])
+D = np.zeros((n, n), float)
+for i in range(n):
+    for j in range(i+1, n):
+        mism = sum(a != b for a, b in zip(seqs[i], seqs[j]))
+        D[i, j] = D[j, i] = mism / L
+
+# neighbor joining
+from Bio.Phylo.TreeConstruction import DistanceMatrix, DistanceTreeConstructor
+lower = [[float(D[i, j]) for j in range(i+1)] for i in range(n)]
+dm = DistanceMatrix(names, lower)
+tree = DistanceTreeConstructor().nj(dm)
+
+T = np.zeros((n, n), float)
+for i, a in enumerate(names):
+    for j, b in enumerate(names):
+        if i < j:
+            dist = tree.distance(a, b)
+            T[i, j] = T[j, i] = dist
+
+mse = float(np.mean((T - D)**2))
+l2  = float(np.linalg.norm(T - D))
+</code></pre>
+                </div>
+            </div>
+
+            <!-- Wyniki liczbowe -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-xs text-slate-500">MSE - średni błąd kwadratowy</div>
+                    <div class="mt-1 text-2xl font-bold">0.00013022</div>
+                    <div class="mt-2 text-sm text-slate-700">między macierzą D i dystansami w drzewie T</div>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-xs text-slate-500">Błąd l^2</div>
+                    <div class="mt-1 text-2xl font-bold">0.114112</div>
+                    <div class="mt-2 text-sm text-slate-700">globalna miara niezgodności T i D</div>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="text-xs text-slate-500">Maksymalna różnica |T − D|</div>
+                    <div class="mt-1 text-2xl font-bold">0.033460</div>
+                    <div class="mt-2 text-sm text-slate-700">najgorsza para taksonów</div>
+                </div>
+            </div>
+
+            <!-- Macierz (fragment) -->
+            <div class="mt-6 rounded-2xl border border-slate-200 overflow-hidden">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                    <div class="font-semibold">Fragment macierzy odległości (p-distance)</div>
+                    <div class="text-xs text-slate-500">pierwsze 6×6, zaokrąglone do 3 miejsc</div>
+                </div>
+                <div class="p-5 overflow-x-auto">
+                    <table class="dataframe min-w-full text-xs">
+                        <thead>
+                        <tr style="text-align: right;">
+                            <th>A_fox</th>
+                            <th>B_wolf</th>
+                            <th>C_dog</th>
+                            <th>D_cat</th>
+                            <th>E_tiger</th>
+                            <th>F_lion</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>A_fox</th>
+                            <td>0.000</td>
+                            <td>0.018</td>
+                            <td>0.036</td>
+                            <td>0.071</td>
+                            <td>0.089</td>
+                            <td>0.071</td>
+                        </tr>
+                        <tr>
+                            <th>B_wolf</th>
+                            <td>0.018</td>
+                            <td>0.000</td>
+                            <td>0.018</td>
+                            <td>0.054</td>
+                            <td>0.071</td>
+                            <td>0.089</td>
+                        </tr>
+                        <tr>
+                            <th>C_dog</th>
+                            <td>0.036</td>
+                            <td>0.018</td>
+                            <td>0.000</td>
+                            <td>0.036</td>
+                            <td>0.054</td>
+                            <td>0.071</td>
+                        </tr>
+                        <tr>
+                            <th>D_cat</th>
+                            <td>0.071</td>
+                            <td>0.054</td>
+                            <td>0.036</td>
+                            <td>0.000</td>
+                            <td>0.018</td>
+                            <td>0.036</td>
+                        </tr>
+                        <tr>
+                            <th>E_tiger</th>
+                            <td>0.089</td>
+                            <td>0.071</td>
+                            <td>0.054</td>
+                            <td>0.018</td>
+                            <td>0.000</td>
+                            <td>0.018</td>
+                        </tr>
+                        <tr>
+                            <th>F_lion</th>
+                            <td>0.071</td>
+                            <td>0.089</td>
+                            <td>0.071</td>
+                            <td>0.036</td>
+                            <td>0.018</td>
+                            <td>0.000</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Wykresy -->
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="font-semibold">Wykres 1: Heatmap macierzy odległości</div>
+                    <img class="mt-3 rounded-xl" src="matrix.png" alt="Heatmap macierzy odległości" />
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-5">
+                    <div class="font-semibold">Wykres 2: Drzewo NJ</div>
+                    <img class="mt-3 rounded-xl bg-white" src="tree.png" alt="Drzewo Neighbor Joining" />
+                </div>
+            </div>
+
+            <!-- Interpretacja -->
+            <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <div class="font-semibold text-lg">Interpretacja</div>
+                <div class="mt-3 text-sm text-slate-700 leading-relaxed space-y-3">
+                    <p>
+                        Otrzymane drzewo NJ grupuje sekwencje o najmniejszych p-distance jako sąsiadujące liście, co widać też na heatmapie
+                        (ciemniejsze „bloki” małych odległości). Wartości MSE i l2 są małe, ale nie zerowe, co oznacza, że drzewo nie odtwarza
+                        idealnie wszystkich odległości z macierzy. Największe rozbieżności pojawiają się, gdy prosta p-distance „gubi” informację
+                        o wielokrotnych podstawieniach lub gdy różne linie mają inne tempa zmian, więc jedna długość gałęzi nie pasuje naraz do wielu par.
+                    </p>
+                    <p class="font-semibold">
+                        Dlaczego błąd aproksymacji (l2) sugeruje nieaddytywność danych i jak to wpływa na wiarygodność rekonstrukcji historii ewolucyjnej?
+                    </p>
+                    <p>
+                        Jeśli dane byłyby addytywne, istniałoby drzewo, dla którego T = D (błąd l2 równy zero), więc każda para liści miałaby dystans dokładnie
+                        jako sumę wag po ścieżce. Gdy l2 &gt; 0, znaczy to, że nie da się jednocześnie dopasować wszystkich par odległości jedną strukturą drzewa i jednym
+                        zestawem długości gałęzi, więc część relacji musi być „kompromisem” algorytmu. Taki kompromis obniża wiarygodność wniosków o kolejności rozdzielania
+                        linii: niektóre rozgałęzienia mogą być artefaktem metryki lub szumu, a nie stabilnym sygnałem ewolucyjnym.
+                    </p>
+                </div>
+
+                <div class="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
+                    <div class="font-semibold">2–3 zdania: co rozumiem z kodu (anti black-box)</div>
+                    <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+                        Wiem, że p-distance liczy tylko niedopasowania znaków w wyrównanych sekwencjach i nie modeluje wielokrotnych substytucji, więc może zaniżać
+                        „prawdziwe” odległości dla bardziej odległych par. Rozumiem też, że NJ konstruuje drzewo iteracyjnie, wybierając pary do połączenia na podstawie
+                        skorygowanego kryterium, a wynikowe długości gałęzi są potem używane do obliczania dystansów w drzewie (sumy po ścieżkach).
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
+                <div class="font-semibold text-sm">Użycie AI w tej sekcji</div>
+                <p class="mt-2 text-sm text-slate-700 leading-relaxed text-xs">
+                    AI pomogło mi ułożyć strukturę eksperymentu (kolejność kroków, metryki MSE i l2) oraz wygenerować szkielet kodu do rekonstrukcji NJ i eksportu wykresów.
+                    Kod przejrzałem linia po linii, dopisałem komentarze i sprawdziłem, co oznaczają obliczane macierze D oraz T i dlaczego ich różnica jest miarą nieaddytywności.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pb-10">
+        <div class="text-center text-xs text-slate-500">
+            Raport HTML • TailwindCSS • dokładnie 3 sekcje • plik do wydruku jako PDF
+        </div>
+    </footer>
+
+</main>
+</body>
+</html>
